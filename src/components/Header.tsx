@@ -29,7 +29,7 @@ const Header = () => {
   ];
 
   return (
-    <div className="bg-glass-morph-bg sticky left-0 right-0 top-2 mx-auto w-[80%] rounded-lg bg-opacity-10 px-3 py-2 backdrop-blur-lg md:w-[40%]">
+    <div className="bg-black/70 sticky left-0 right-0 top-2 mx-auto w-[80%] rounded-lg bg-opacity-10 px-3 py-2 backdrop-blur-lg md:w-[40%]">
       <div className="relative flex w-[100%] justify-around">
         {sections.map((section, index) => (
           <Section
@@ -78,7 +78,7 @@ const Section = ({ children, setSlidingBackgroundPosition }: SectionProps) => {
       ref={ref}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="z-10 block cursor-pointer rounded-lg px-2 py-2 text-sm font-light text-white md:px-3 md:text-base"
+      className="z-10 block cursor-pointer rounded-lg px-2 py-2 text-sm font-light text-white mix-blend-difference md:px-3 md:text-base"
     >
       {children}
     </motion.li>
