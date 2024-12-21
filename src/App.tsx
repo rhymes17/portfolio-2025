@@ -1,10 +1,12 @@
 import './App.css';
+import Header from './components/Header';
 
 function App() {
   return (
-    <>
-      <h1 className="text-2xl text-red-400 font-montserrat">Rahul Dev Choudhari</h1>
-    </>
+    <div className="relative h-full min-h-[100svh] w-full bg-background">
+      <Header />
+      <div className="h-[200vh]"></div>
+    </div>
   );
 }
 
