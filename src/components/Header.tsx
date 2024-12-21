@@ -22,8 +22,9 @@ const containerVariants = {
     opacity: 1,
     y: 0,
     transition: {
+      delay: 0.7,
       duration: 0.6,
-      staggerChildren: 0.35, // Stagger effect for child elements
+      staggerChildren: 0.2, // Stagger effect for child elements
     },
   },
   hiddenOnScroll: {
@@ -48,7 +49,7 @@ const childVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.5,
+      duration: 0.5, // Duration for each child animation
     },
   },
 };
