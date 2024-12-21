@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion, useMotionValueEvent, useScroll } from 'framer-motion';
 import { useRef, useState } from 'react';
 
 type SectionProps = {
@@ -11,6 +11,46 @@ type SectionProps = {
       opacity: number;
     }>
   >;
+};
+
+const containerVariants = {
+  hidden: {
+    opacity: 0,
+    y: -70,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      staggerChildren: 0.35, // Stagger effect for child elements
+    },
+  },
+  hiddenOnScroll: {
+    opacity: 0,
+    y: -70,
+  },
+  visibleTwice: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.3,
+    },
+  },
+};
+
+const childVariants = {
+  hidden: {
+    opacity: 0,
+    y: -20,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
 };
 
 const Header = () => {
@@ -28,9 +68,38 @@ const Header = () => {
     { title: 'projects' },
   ];
 
+  const { scrollYProgress } = useScroll();
+  const [isHeaderVisible, setIsHeaderVisible] = useState(true);
+  const [headerVariant, setHeaderVariant] = useState<
+    'visible' | 'visibleTwice' | 'hiddenOnScroll'
+  >('visible');
+  const [lastScrollYProgress, setLastScrollYProgress] = useState(0);
+
+  useMotionValueEvent(scrollYProgress, 'change', (currentYProgress) => {
+    if (currentYProgress > lastScrollYProgress && isHeaderVisible) {
+      setIsHeaderVisible(false);
+      setHeaderVariant('hiddenOnScroll'); // Use hidden variant when scrolling down
+    } else if (currentYProgress < lastScrollYProgress && !isHeaderVisible) {
+      setIsHeaderVisible(true);
+      setHeaderVariant('visibleTwice'); // Visible without stagger
+    }
+
+    setLastScrollYProgress(currentYProgress);
+  });
+
   return (
-    <div className="bg-black/70 sticky left-0 right-0 top-2 mx-auto w-[80%] rounded-lg bg-opacity-10 px-3 py-2 backdrop-blur-lg md:w-[40%]">
-      <div className="relative flex w-[100%] justify-around">
+    <motion.div
+      variants={containerVariants}
+      initial="hidden"
+      animate={headerVariant}
+      className="bg-black/70 sticky left-0 right-0 top-2 mx-auto w-[80%] rounded-lg bg-opacity-10 px-3 py-2 backdrop-blur-lg md:w-[40%]"
+    >
+      <motion.div
+        variants={headerVariant === 'visible' ? containerVariants : {}}
+        initial="hidden"
+        animate="visible"
+        className="relative flex w-[100%] justify-around"
+      >
         {sections.map((section, index) => (
           <Section
             key={`${index}-${section.title}`}
@@ -43,8 +112,8 @@ const Header = () => {
         <SlidingBackground
           slidingBackgroundPosition={slidingBackgroundPosition}
         />
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 
@@ -75,6 +144,7 @@ const Section = ({ children, setSlidingBackgroundPosition }: SectionProps) => {
 
   return (
     <motion.li
+      variants={childVariants}
       ref={ref}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
