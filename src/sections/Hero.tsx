@@ -8,20 +8,23 @@ const Hero = () => {
     height: '112%',
   });
 
+  const [fontSize, setFontSize] = useState(10); // Initial font size as a percentage
+
   // Update dimensions based on screen size
   useEffect(() => {
     const updateDimensions = () => {
-      if (window.innerWidth > 1540) {
-        setDimensions({ width: '65%', height: '88%' });
-      } else if (window.innerWidth > 1024) {
+      if (window.innerWidth > 1024) {
         // Large screens (lg)
         setDimensions({ width: '55%', height: '88%' });
+        setFontSize(8); // Font size in vw
       } else if (window.innerWidth >= 768) {
         // Medium screens (md)
-        setDimensions({ width: '75%', height: '80%' });
+        setDimensions({ width: '65%', height: '75%' });
+        setFontSize(9); // Font size in vw
       } else {
         // Small screens (default)
-        setDimensions({ width: '85%', height: '58%' });
+        setDimensions({ width: '65%', height: '48%' });
+        setFontSize(4); // Font size in vw
       }
     };
 
@@ -32,8 +35,8 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="mt-[3rem] h-[90vh] py-5">
-      <div className="relative h-full w-full">
+    <div className="relative flex h-[100vh] items-center justify-center">
+      <div className="relative flex h-[90%] w-full items-center justify-center">
         <motion.div
           initial={{
             marginTop: '-8%',
@@ -63,17 +66,38 @@ const Hero = () => {
         <div
           style={{
             height: dimensions.height,
-            width: dimensions.width + '20%',
+            width: `${Math.min(95, parseInt(dimensions.width.split('%')[0]) + 25)}%`,
           }}
-          className="absolute left-0 right-0 top-0 mx-auto font-name-text md:w-[80%] lg:w-[70%] 2xl:w-[80%]"
+          className="absolute left-0 right-0 top-1/2 mx-auto flex -translate-y-1/2 flex-col items-center justify-evenly font-name-text"
         >
-          <h1 className="text-text-black font-bold md:text-[6.5rem] lg:text-[9.5rem] 2xl:text-[11rem]">
+          <h1
+            className="text-text-black font-bold leading-[0] md:text-[6.5rem] lg:text-[8.5rem] 2xl:text-[11rem]"
+            style={{
+              fontSize: `calc(${fontSize}vw + 2rem)`, // Adjust font size dynamically based on viewport width
+              whiteSpace: 'nowrap',
+              textAlign: 'center', // Ensures text stays centered
+            }}
+          >
             HEY, I'M RAHUL
           </h1>
-          <h1 className="text-text-black -mt-[4.5rem] font-bold md:text-[6.5rem] lg:text-[9.5rem] 2xl:text-[11rem]">
+          <h1
+            className="text-text-black font-bold leading-[0] md:text-[6.5rem] lg:text-[8.5rem] 2xl:text-[11rem]"
+            style={{
+              fontSize: `calc(${fontSize}vw + 2rem)`, // Adjust font size dynamically based on viewport width
+              whiteSpace: 'nowrap',
+              textAlign: 'center', // Ensures text stays centered
+            }}
+          >
             HEY, I'M RAHUL
           </h1>
-          <h1 className="text-text-black -mt-[4.5rem] font-bold md:text-[6.5rem] lg:text-[9.5rem] 2xl:text-[11rem]">
+          <h1
+            className="text-text-black font-bold leading-[0] md:text-[6.5rem] lg:text-[8.5rem] 2xl:text-[11rem]"
+            style={{
+              fontSize: `calc(${fontSize}vw + 2rem)`, // Adjust font size dynamically based on viewport width
+              whiteSpace: 'nowrap',
+              textAlign: 'center', // Ensures text stays centered
+            }}
+          >
             HEY, I'M RAHUL
           </h1>
         </div>

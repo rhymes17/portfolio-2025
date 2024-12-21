@@ -7,6 +7,7 @@ function App() {
     <div className="relative h-full min-h-[100svh] w-full bg-background">
       <Header />
       <Hero />
+      <div className="h-[100vh]"></div>
     </div>
   );
 }
