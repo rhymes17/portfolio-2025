@@ -9,7 +9,8 @@ const Hero = () => {
   });
 
   const textStrokeStyle = {
-    WebkitTextStroke: '3px #262626',
+    WebkitTextStroke:
+      dimensions.height === '48%' ? '2px #262626' : '3px #262626',
     color: 'transparent',
   };
 

@@ -3,6 +3,7 @@ import { createContext, useContext, useEffect, useState } from 'react';
 type ThemeContextType = {
   isDarkMode: boolean;
   toggleDarkMode: () => void;
+  setIsDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
@@ -31,6 +32,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
       value={{
         isDarkMode,
         toggleDarkMode,
+        setIsDarkMode,
       }}
     >
       {children}

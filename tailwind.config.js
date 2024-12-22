@@ -4,11 +4,14 @@ export default {
   darkMode: 'class',
   theme: {
     colors: {
-      background: '#FAFAF9',
       black: '#0F0F0F',
-      'text-black': '#262626',
       white: '#fff',
+      background: '#FAFAF9',
+      'background-secondary': '#262626',
+      'text-black': '#262626',
       'glass-morph-bg': '#f7f5f2',
+      'section-title': '#8A8A6F',
+      'intro-text': '#D0D1C6',
     },
     fontSize: {
       xs: '0.75rem',
