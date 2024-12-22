@@ -28,7 +28,7 @@ const containerVariants = {
     },
   },
   hiddenOnScroll: {
-    opacity: 0,
+    opacity: 1,
     y: -70,
   },
   visibleTwice: {
@@ -93,7 +93,7 @@ const Header = () => {
       variants={containerVariants}
       initial="hidden"
       animate={headerVariant}
-      className="bg-black/70 sticky left-0 right-0 top-2 mx-auto w-[80%] rounded-lg bg-opacity-10 px-3 py-2 backdrop-blur-lg md:w-[40%]"
+      className="bg-black/70 fixed left-0 right-0 top-2 z-50 mx-auto w-[80%] rounded-lg bg-opacity-10 px-3 py-2 backdrop-blur-lg md:w-[60%] lg:w-[30%]"
     >
       <motion.div
         variants={headerVariant === 'visible' ? containerVariants : {}}
