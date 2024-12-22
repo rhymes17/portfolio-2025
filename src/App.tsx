@@ -11,6 +11,7 @@ function App() {
       <Hero />
       <Intro />
       <About />
+      <div className="h-[100vh]"></div>
     </div>
   );
 }
