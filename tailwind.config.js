@@ -29,7 +29,11 @@ export default {
       outfit: ['Outfit', 'sans-serif'],
       'name-text': ['Mukta', 'sans-serif'],
     },
-    extend: {},
+    extend: {
+      margin: {
+        'section-title': '5rem',
+      },
+    },
   },
   plugins: [],
 };
