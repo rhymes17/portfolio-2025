@@ -8,6 +8,11 @@ const Hero = () => {
     height: '112%',
   });
 
+  const textStrokeStyle = {
+    WebkitTextStroke: '3px #262626',
+    color: 'transparent',
+  };
+
   const [fontSize, setFontSize] = useState(10); // Initial font size as a percentage
 
   // Update dimensions based on screen size
@@ -39,13 +44,11 @@ const Hero = () => {
       <div className="relative flex h-[90%] w-full items-center justify-center">
         <motion.div
           initial={{
-            marginTop: '-8%',
             width: '90%',
-            height: '112%',
+            height: '100%',
             borderRadius: 0,
           }}
           animate={{
-            marginTop: '0',
             width: dimensions.width,
             height: dimensions.height,
             borderRadius: '0.375rem',
@@ -57,6 +60,18 @@ const Hero = () => {
           className="mx-auto h-[88%] rounded-md md:w-[75%]"
         >
           <motion.img
+            initial={{
+              scale: 1.05,
+              borderRadius: 0,
+            }}
+            animate={{
+              scale: 1,
+              borderRadius: '0.375rem',
+            }}
+            transition={{
+              duration: 1.6,
+              ease: [0.8, 0.3, 0.3, 1],
+            }}
             className="h-full w-full rounded-md object-cover"
             src={HeroBg}
             alt="hero-bg"
@@ -70,36 +85,55 @@ const Hero = () => {
           }}
           className="absolute left-0 right-0 top-1/2 mx-auto flex -translate-y-1/2 flex-col items-center justify-evenly font-name-text"
         >
-          <h1
+          <motion.h1
             className="text-text-black font-bold leading-[0] md:text-[6.5rem] lg:text-[8.5rem] 2xl:text-[11rem]"
             style={{
               fontSize: `calc(${fontSize}vw + 2rem)`, // Adjust font size dynamically based on viewport width
               whiteSpace: 'nowrap',
-              textAlign: 'center', // Ensures text stays centered
+              textAlign: 'center',
+            }}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 1.6,
+              ease: [0.8, 0.3, 0.3, 1],
             }}
           >
             HEY, I'M RAHUL
-          </h1>
-          <h1
+          </motion.h1>
+          <motion.h1
             className="text-text-black font-bold leading-[0] md:text-[6.5rem] lg:text-[8.5rem] 2xl:text-[11rem]"
             style={{
               fontSize: `calc(${fontSize}vw + 2rem)`, // Adjust font size dynamically based on viewport width
               whiteSpace: 'nowrap',
-              textAlign: 'center', // Ensures text stays centered
+              textAlign: 'center',
+              ...textStrokeStyle,
+            }}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 1.6,
+              ease: [0.8, 0.3, 0.3, 1],
             }}
           >
             HEY, I'M RAHUL
-          </h1>
-          <h1
+          </motion.h1>
+          <motion.h1
             className="text-text-black font-bold leading-[0] md:text-[6.5rem] lg:text-[8.5rem] 2xl:text-[11rem]"
             style={{
               fontSize: `calc(${fontSize}vw + 2rem)`, // Adjust font size dynamically based on viewport width
               whiteSpace: 'nowrap',
-              textAlign: 'center', // Ensures text stays centered
+              textAlign: 'center',
+            }}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 1.6,
+              ease: [0.8, 0.3, 0.3, 1],
             }}
           >
             HEY, I'M RAHUL
-          </h1>
+          </motion.h1>
         </div>
       </div>
     </div>
