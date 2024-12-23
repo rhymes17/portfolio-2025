@@ -84,10 +84,10 @@ const Hero = () => {
             height: dimensions.height,
             width: `${Math.min(95, parseInt(dimensions.width.split('%')[0]) + 25)}%`,
           }}
-          className="absolute left-0 right-0 top-1/2 mx-auto flex -translate-y-1/2 flex-col items-center justify-evenly font-name-text"
+          className="font-mukta absolute left-0 right-0 top-1/2 mx-auto flex -translate-y-1/2 flex-col items-center justify-evenly"
         >
           <motion.h1
-            className="text-text-black font-bold leading-[0] md:text-[6.5rem] lg:text-[8.5rem] 2xl:text-[11rem]"
+            className="font-bold leading-[0] text-text-black md:text-[6.5rem] lg:text-[8.5rem] 2xl:text-[11rem]"
             style={{
               fontSize: `calc(${fontSize}vw + 2rem)`, // Adjust font size dynamically based on viewport width
               whiteSpace: 'nowrap',
@@ -103,7 +103,7 @@ const Hero = () => {
             HEY, I'M RAHUL
           </motion.h1>
           <motion.h1
-            className="text-text-black font-bold leading-[0] md:text-[6.5rem] lg:text-[8.5rem] 2xl:text-[11rem]"
+            className="font-bold leading-[0] text-text-black md:text-[6.5rem] lg:text-[8.5rem] 2xl:text-[11rem]"
             style={{
               fontSize: `calc(${fontSize}vw + 2rem)`, // Adjust font size dynamically based on viewport width
               whiteSpace: 'nowrap',
@@ -120,7 +120,7 @@ const Hero = () => {
             HEY, I'M RAHUL
           </motion.h1>
           <motion.h1
-            className="text-text-black font-bold leading-[0] md:text-[6.5rem] lg:text-[8.5rem] 2xl:text-[11rem]"
+            className="font-bold leading-[0] text-text-black md:text-[6.5rem] lg:text-[8.5rem] 2xl:text-[11rem]"
             style={{
               fontSize: `calc(${fontSize}vw + 2rem)`, // Adjust font size dynamically based on viewport width
               whiteSpace: 'nowrap',

@@ -36,7 +36,7 @@ const ExperienceCard = ({ data, hasBorderBottom = true }: Props) => {
         </h4>
       </div>
 
-      <h3 className="text-[0.8rem] text-white/80 md:text-[1.2rem] lg:flex-1 lg:text-[1.2rem] xl:text-[1.4rem]">
+      <h3 className="text-[0.8rem] text-white/80 md:text-[1.2rem] lg:flex-1 lg:text-[1rem] xl:text-[1.4rem]">
         {description}
       </h3>
     </div>
