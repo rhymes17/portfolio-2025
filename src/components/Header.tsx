@@ -24,11 +24,10 @@ const containerVariants = {
     transition: {
       delay: 0.7,
       duration: 0.6,
-      staggerChildren: 0.2, // Stagger effect for child elements
     },
   },
   hiddenOnScroll: {
-    opacity: 1,
+    opacity: 0,
     y: -70,
   },
   visibleTwice: {
@@ -36,20 +35,6 @@ const containerVariants = {
     y: 0,
     transition: {
       duration: 0.3,
-    },
-  },
-};
-
-const childVariants = {
-  hidden: {
-    opacity: 0,
-    y: -20,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5, // Duration for each child animation
     },
   },
 };
@@ -79,10 +64,10 @@ const Header = () => {
   useMotionValueEvent(scrollYProgress, 'change', (currentYProgress) => {
     if (currentYProgress > lastScrollYProgress && isHeaderVisible) {
       setIsHeaderVisible(false);
-      setHeaderVariant('hiddenOnScroll'); // Use hidden variant when scrolling down
+      setHeaderVariant('hiddenOnScroll');
     } else if (currentYProgress < lastScrollYProgress && !isHeaderVisible) {
       setIsHeaderVisible(true);
-      setHeaderVariant('visibleTwice'); // Visible without stagger
+      setHeaderVariant('visibleTwice');
     }
 
     setLastScrollYProgress(currentYProgress);
@@ -96,7 +81,7 @@ const Header = () => {
       className="bg-black/70 fixed left-0 right-0 top-2 z-50 mx-auto w-[80%] rounded-lg bg-opacity-10 px-3 py-2 backdrop-blur-lg md:w-[60%] lg:w-[30%]"
     >
       <motion.div
-        variants={headerVariant === 'visible' ? containerVariants : {}}
+        variants={containerVariants}
         initial="hidden"
         animate="visible"
         className="relative flex w-[100%] justify-around"
@@ -145,7 +130,6 @@ const Section = ({ children, setSlidingBackgroundPosition }: SectionProps) => {
 
   return (
     <motion.li
-      variants={childVariants}
       ref={ref}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
