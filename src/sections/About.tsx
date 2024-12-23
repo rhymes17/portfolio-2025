@@ -33,7 +33,7 @@ const About = () => {
   };
 
   return (
-    <motion.div className="px-5">
+    <motion.div className="mt-section-title px-5">
       <SectionTitle title="about me" />
 
       <div className="mt-[5rem] flex flex-wrap gap-5">
@@ -50,6 +50,9 @@ const About = () => {
             transition={{
               duration: 1.6,
               ease: [0.8, 0.3, 0.3, 1],
+            }}
+            viewport={{
+              once: true,
             }}
             className="h-[300px] w-full rounded-xl object-cover object-center md:h-[65vh] lg:h-[65vh] xl:h-[90vh]"
             src={Rahul}
@@ -70,6 +73,9 @@ const About = () => {
             <motion.h1
               initial={textVariants.hidden}
               whileInView={textVariants.visible}
+              viewport={{
+                once: true,
+              }}
               className="font-outfit text-[2.1rem] font-semibold md:text-[2.5rem] lg:text-[3rem]"
             >
               A brief intro, who am I?
@@ -78,6 +84,9 @@ const About = () => {
             <motion.h3
               initial={textVariants.hidden}
               whileInView={textVariants.visible}
+              viewport={{
+                once: true,
+              }}
               className="text-[1.2rem] font-light md:text-[1.7rem] lg:text-[2rem]"
             >
               I am a self-taught creative frontend developer, web designer, and
