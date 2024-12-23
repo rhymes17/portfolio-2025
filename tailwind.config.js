@@ -27,7 +27,8 @@ export default {
     fontFamily: {
       montserrat: ['Montserrat', 'sans-serif'],
       outfit: ['Outfit', 'sans-serif'],
-      'name-text': ['Mukta', 'sans-serif'],
+      mukta: ['Mukta', 'sans-serif'],
+      'space-grotesk': ['Space Grotesk', 'Outfit'],
     },
     extend: {
       margin: {
