@@ -28,13 +28,14 @@ const SkillCard = ({ skill }: Props) => {
       transition={{
         duration: 1,
       }}
-      className="flex items-center justify-between rounded-xl bg-[rgb(16,16,18)] px-3 py-4 text-white md:px-3 md:py-4"
+      className="flex items-center justify-center rounded-lg bg-[rgb(16,16,18)] px-2 py-2 text-white md:justify-between md:rounded-xl md:px-3 md:py-4"
     >
       <div className="flex items-center gap-5">
         <div className="rounded-md border-[1px] border-[rgb(20,20,21)] bg-[rgb(29,29,30)] px-2 py-2">
           {icon}
         </div>
-        <div className="flex flex-col gap-1 leading-none md:gap-2">
+
+        <div className="hidden flex-col gap-1 leading-none md:flex md:gap-2">
           <h1 className="text-lg text-white md:text-xl">{title}</h1>
           <h3 className="text-sm text-white/80 md:text-sm">{subtitle}</h3>
         </div>

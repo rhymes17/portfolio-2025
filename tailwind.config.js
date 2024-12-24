@@ -28,10 +28,15 @@ export default {
       montserrat: ['Montserrat', 'sans-serif'],
       outfit: ['Outfit', 'sans-serif'],
       mukta: ['Mukta', 'sans-serif'],
-      'space-grotesk': ['Space Grotesk', 'Outfit'],
+      'space-grotesk': ['Space Grotesk', 'Outfit', 'sans-serif'],
+      rubik: ['Rubik', 'Outfit', 'sans-serif'],
+      kanit: ['Kanit', 'Rubik', 'sans-serif'],
     },
     extend: {
       margin: {
+        'section-title': '5rem',
+      },
+      padding: {
         'section-title': '5rem',
       },
     },
