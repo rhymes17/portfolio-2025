@@ -6,11 +6,11 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="mx-auto mt-section-title min-h-[100vh] w-[90%] lg:w-[80%] xl:w-[75%]"
+      className="pt-section-title mx-auto min-h-[100vh] w-[90%] lg:w-[80%] xl:w-[75%]"
     >
       <SectionTitle title="skills" />
 
-      <div className="font-space-grotesk mt-section-title grid gap-3 md:grid-cols-2">
+      <div className="font-space-grotesk mt-section-title grid grid-cols-5 gap-3 md:grid-cols-2 xl:grid-cols-3">
         {skillsData.map((skill) => (
           <SkillCard key={skill.id} skill={skill} />
         ))}

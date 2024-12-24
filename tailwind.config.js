@@ -12,6 +12,7 @@ export default {
       'glass-morph-bg': '#f7f5f2',
       'section-title': '#8A8A6F',
       'intro-text': '#D0D1C6',
+      project: '#D0D0C7',
     },
     fontSize: {
       xs: '0.75rem',
@@ -28,10 +29,15 @@ export default {
       montserrat: ['Montserrat', 'sans-serif'],
       outfit: ['Outfit', 'sans-serif'],
       mukta: ['Mukta', 'sans-serif'],
-      'space-grotesk': ['Space Grotesk', 'Outfit'],
+      'space-grotesk': ['Space Grotesk', 'Outfit', 'sans-serif'],
+      rubik: ['Rubik', 'Outfit', 'sans-serif'],
+      kanit: ['Kanit', 'Rubik', 'sans-serif'],
     },
     extend: {
       margin: {
+        'section-title': '5rem',
+      },
+      padding: {
         'section-title': '5rem',
       },
     },
