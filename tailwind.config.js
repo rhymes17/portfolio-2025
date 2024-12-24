@@ -12,6 +12,7 @@ export default {
       'glass-morph-bg': '#f7f5f2',
       'section-title': '#8A8A6F',
       'intro-text': '#D0D1C6',
+      project: '#D0D0C7',
     },
     fontSize: {
       xs: '0.75rem',
